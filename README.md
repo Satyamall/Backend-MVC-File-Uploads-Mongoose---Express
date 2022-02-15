@@ -14,3 +14,30 @@
 ```js
   npm run start
 ```
+
+# In multer for windows causes issues for file directory->
+```js
+ const storage = multer.diskStorage({
+    filename: function(req,file, callback){
+          callback(null,  new Date().toISOString() + file.originalname)
+    },
+    destination: function(req,file,callback){
+        console.log(`destination: ${path.join(__dirname,"../uploads/")}`)
+        callback(null, path.join(__dirname,"../uploads"))
+    }
+})
+```
+
+# what we can do for window in multer for filename. Remove `new Date().toISOString()` this part from filename.
+
+```js
+ const storage = multer.diskStorage({
+    filename: function(req,file, callback){
+          callback(null, file.originalname)
+    },
+    destination: function(req,file,callback){
+        console.log(`destination: ${path.join(__dirname,"../uploads/")}`)
+        callback(null, path.join(__dirname,"../uploads"))
+    }
+})
+```
