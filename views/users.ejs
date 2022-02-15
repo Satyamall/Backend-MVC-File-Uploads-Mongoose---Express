@@ -1,0 +1,18 @@
+
+<html lang="en">
+   <body>
+       <h1>Users</h1>
+       <% users.forEach( user => {%>
+         <div>
+             <h2><%= user._id %></h2>
+             <h2><%= user.name %></h2>
+             <p><%= user.code %></p>
+             <a href="/users/<%=user._id %>">Details</a>
+         </div>
+      <% }) %>
+
+      <%- include("./components/footer.ejs") %>
+
+      <!-- <form action="/users" method="post"></form> -->
+   </body>
+</html>
