@@ -7,7 +7,7 @@
 # multer-> It is used for file upload by the help of multer. It work like a middleware.
 
 ```js
-   npm i express cors express-validator ejs multer nodemon
+   npm i mongoose express cors express-validator ejs multer nodemon
 ```
 
 **For start this aplication**
